@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import CyberButton from './CyberButton';
+import { useI18n } from '@/i18n';
 
 const ProjectsSection = () => {
+  const { t } = useI18n();
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const projects = [
@@ -68,14 +70,14 @@ const ProjectsSection = () => {
   ];
 
   const categories = [
-    { id: 'all', label: 'All Projects', icon: '🌟' },
-    { id: 'frontend', label: 'Frontend', icon: '🎨' },
-    { id: 'fullstack', label: 'Full Stack', icon: '⚡' },
-    { id: 'backend', label: 'Backend', icon: '⚙️' }
+    { id: 'all', labelKey: 'projects.filter.all', icon: '🌟' },
+    { id: 'frontend', labelKey: 'projects.filter.frontend', icon: '🎨' },
+    { id: 'fullstack', labelKey: 'projects.filter.fullstack', icon: '⚡' },
+    { id: 'backend', labelKey: 'projects.filter.backend', icon: '⚙️' }
   ];
 
-  const filteredProjects = selectedCategory === 'all' 
-    ? projects 
+  const filteredProjects = selectedCategory === 'all'
+    ? projects
     : projects.filter(project => project.category === selectedCategory);
 
   return (
@@ -83,94 +85,92 @@ const ProjectsSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold gradient-text mb-6 font-cyber">
-            {'<PROJECTS />'}
+            { t('projects.title') }
           </h2>
           <p className="text-xl text-muted-foreground font-cyber">
-            Some things I've built with passion and coffee
+            { t('projects.subtitle') }
           </p>
         </div>
 
-        {/* Category Filter */}
+        {/* Category Filter */ }
         <div className="flex flex-wrap justify-center gap-4 mb-16">
-          {categories.map((category) => (
+          { categories.map((category) => (
             <button
-              key={category.id}
-              onClick={() => setSelectedCategory(category.id)}
-              className={`px-6 py-3 rounded-lg font-cyber font-medium transition-all duration-300 ${
-                selectedCategory === category.id
+              key={ category.id }
+              onClick={ () => setSelectedCategory(category.id) }
+              className={ `px-6 py-3 rounded-lg font-cyber font-medium transition-all duration-300 ${selectedCategory === category.id
                   ? 'bg-primary text-primary-foreground shadow-neon'
                   : 'bg-card text-card-foreground hover:bg-primary/20 border border-border'
-              }`}
+                }` }
             >
-              <span className="mr-2">{category.icon}</span>
-              {category.label}
+              <span className="mr-2">{ category.icon }</span>
+              { t(category.labelKey) }
             </button>
-          ))}
+          )) }
         </div>
 
-        {/* Projects Grid */}
+        {/* Projects Grid */ }
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <div 
-              key={index}
+          { filteredProjects.map((project, index) => (
+            <div
+              key={ index }
               className="card-interactive rounded-lg p-6 group h-full flex flex-col"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={ { animationDelay: `${index * 0.1}s` } }
             >
-              {/* Project Header */}
+              {/* Project Header */ }
               <div className="flex items-center justify-between mb-4">
-                <div className="text-4xl">{project.image}</div>
-                <span className={`px-3 py-1 rounded-full text-xs font-cyber font-medium ${
-                  project.status === 'Live' 
-                    ? 'bg-accent/20 text-accent' 
+                <div className="text-4xl">{ project.image }</div>
+                <span className={ `px-3 py-1 rounded-full text-xs font-cyber font-medium ${project.status === 'Live'
+                    ? 'bg-accent/20 text-accent'
                     : 'bg-secondary/20 text-secondary'
-                }`}>
-                  {project.status}
+                  }` }>
+                  { project.status }
                 </span>
               </div>
 
-              {/* Project Info */}
+              {/* Project Info */ }
               <h3 className="text-xl font-bold text-foreground mb-3 font-cyber">
-                {project.title}
+                { project.title }
               </h3>
-              
+
               <p className="text-muted-foreground mb-4 flex-grow font-cyber text-sm leading-relaxed">
-                {project.description}
+                { project.description }
               </p>
 
-              {/* Tech Stack */}
+              {/* Tech Stack */ }
               <div className="flex flex-wrap gap-2 mb-6">
-                {project.tech.map((tech, techIndex) => (
-                  <span 
-                    key={techIndex}
+                { project.tech.map((tech, techIndex) => (
+                  <span
+                    key={ techIndex }
                     className="px-2 py-1 bg-muted text-muted-foreground rounded text-xs font-cyber"
                   >
-                    {tech}
+                    { tech }
                   </span>
-                ))}
+                )) }
               </div>
 
-              {/* Project Links */}
+              {/* Project Links */ }
               <div className="flex gap-3 mt-auto">
-                <CyberButton 
-                  variant="primary" 
-                  href={project.github}
+                <CyberButton
+                  variant="primary"
+                  href={ project.github }
                   className="flex-1 text-center text-xs py-2"
                 >
-                  Code
+                  { t('projects.btn.code') }
                 </CyberButton>
-                <CyberButton 
-                  variant="secondary" 
-                  href={project.demo}
+                <CyberButton
+                  variant="secondary"
+                  href={ project.demo }
                   className="flex-1 text-center text-xs py-2"
                 >
-                  Live Demo
+                  { t('projects.btn.demo') }
                 </CyberButton>
               </div>
             </div>
-          ))}
+          )) }
         </div>
 
-        {/* Terminal Output */}
+        {/* Terminal Output */ }
         <div className="mt-16 card-interactive rounded-lg p-8 bg-muted font-cyber">
           <div className="text-accent mb-4">$ git log --oneline</div>
           <div className="space-y-2 text-sm">

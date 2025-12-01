@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import GlitchText from './GlitchText';
 import CyberButton from './CyberButton';
 import heroBg from '../assets/hero-bg.jpg';
+import { useI18n } from '@/i18n';
 
 const HeroSection = () => {
+  const { t } = useI18n();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -41,7 +43,7 @@ const HeroSection = () => {
       <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
         <div className="mb-8">
           <div className="terminal-prompt text-accent text-xl mb-4 font-cyber">
-            <GlitchText text="initializing_portfolio.exe" />
+            <GlitchText text={ t('hero.init') } />
           </div>
 
           <h1 className="text-6xl md:text-8xl font-bold mb-6">
@@ -53,7 +55,7 @@ const HeroSection = () => {
 
           <div className="text-2xl md:text-3xl text-muted-foreground mb-8 font-cyber">
             <GlitchText
-              text="Crafting digital experiences with code & creativity"
+              text={ t('hero.subtitle') }
               glitchEffect={ false }
             />
           </div>
@@ -62,10 +64,10 @@ const HeroSection = () => {
         {/* Stats Grid */ }
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
           { [
-            { label: 'Projects', value: '100+', color: 'primary' },
-            { label: 'Technologies', value: '50+', color: 'secondary' },
-            { label: 'Years experience', value: '5+', color: 'accent' },
-            { label: 'Coffee Cups', value: '∞', color: 'primary' }
+            { label: t('hero.stat.projects'), value: '100+', color: 'primary' },
+            { label: t('hero.stat.tech'), value: '50+', color: 'secondary' },
+            { label: t('hero.stat.exp'), value: '5+', color: 'accent' },
+            { label: t('hero.stat.coffee'), value: '∞', color: 'primary' }
           ].map((stat, index) => (
             <div
               key={ index }
@@ -85,13 +87,13 @@ const HeroSection = () => {
         {/* Action Buttons */ }
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <CyberButton variant="primary" href="#projects">
-            View Projects
+            { t('hero.btn.projects') }
           </CyberButton>
           <CyberButton variant="secondary" href="#contact">
-            Let's Connect
+            { t('hero.btn.contact') }
           </CyberButton>
           <CyberButton variant="accent" href="#about">
-            About Me
+            { t('hero.btn.about') }
           </CyberButton>
         </div>
 

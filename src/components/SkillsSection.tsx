@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useI18n } from '@/i18n';
 
 const SkillsSection = () => {
+  const { t } = useI18n();
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
   const skillCategories = [
@@ -47,7 +49,7 @@ const SkillsSection = () => {
             { '<SKILLS />' }
           </h2>
           <p className="text-xl text-muted-foreground font-cyber">
-            Fullstack tools I use to design, build and scale modern web apps
+            { t('skills.subtitle') }
           </p>
         </div>
 
@@ -82,8 +84,8 @@ const SkillsSection = () => {
                     <div className="w-full bg-muted rounded-full h-2">
                       <div
                         className={ `h-2 rounded-full transition-all duration-1000 ease-out ${hoveredSkill === `${categoryIndex}-${index}`
-                            ? 'bg-gradient-primary shadow-neon'
-                            : 'bg-primary'
+                          ? 'bg-gradient-primary shadow-neon'
+                          : 'bg-primary'
                           }` }
                         style={ {
                           width: hoveredSkill === `${categoryIndex}-${index}`

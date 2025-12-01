@@ -1,56 +1,58 @@
 import { useState } from 'react';
+import { useI18n } from '@/i18n';
 
 const AboutSection = () => {
+  const { t } = useI18n();
   const [activeTab, setActiveTab] = useState('story');
 
   const tabs = [
-    { id: 'story', label: 'My Story', icon: '📖' },
-    { id: 'values', label: 'Values', icon: '💎' },
-    { id: 'process', label: 'Process', icon: '⚡' }
+    { id: 'story', labelKey: 'about.tab.story', icon: '📖' },
+    { id: 'values', labelKey: 'about.tab.values', icon: '💎' },
+    { id: 'process', labelKey: 'about.tab.process', icon: '⚡' }
   ];
 
   const tabContent = {
     story: {
-      title: "From 2020 to Fullstack Reality",
-      content: [
-        "Started my professional journey in 2020 and never stopped shipping.",
-        "Over 5+ years I’ve built production-ready apps for web and startups of different scales.",
-        "Delivered 100+ projects – from landing pages and dashboards to full-scale SaaS platforms.",
-        "Grew from pure frontend into a fullstack developer working with React, Next.js, Node.js, Supabase, Firebase and MongoDB.",
-        "Actively exploring AI-powered flows (ChatGPT and related tools) to speed up development and boost product quality."
+      titleKey: 'about.story.title',
+      contentKeys: [
+        'about.story.1',
+        'about.story.2',
+        'about.story.3',
+        'about.story.4',
+        'about.story.5'
       ]
     },
     values: {
-      title: "What Drives Me",
-      content: [
-        "🎯 User-First Approach: Every feature is designed to solve a real problem and feel intuitive.",
-        "⚡ Performance & Reliability: I care about fast, stable and secure experiences from frontend to backend.",
-        "🧩 Clean, Typed Code: TypeScript across the stack, predictable architecture and maintainable solutions.",
-        "🚀 Continuous Learning: React, Next.js, Node.js, databases and AI tools are part of my daily toolkit.",
-        "🤝 Partnership Mindset: I act as a technical partner, not just a coder, focusing on long‑term success."
+      titleKey: 'about.values.title',
+      contentKeys: [
+        'about.values.1',
+        'about.values.2',
+        'about.values.3',
+        'about.values.4',
+        'about.values.5'
       ]
     },
     process: {
-      title: "How I Work",
-      content: [
-        "🔍 Discovery: Clarifying business goals, user needs and technical constraints.",
-        "🎨 Plan & Architecture: Designing UX flows, data models and API structure before coding.",
-        "⚙️ Development: Building with React, Next.js, Node.js, TypeScript, Supabase, Firebase and MongoDB.",
-        "🧪 Testing & Polish: Checking edge cases, performance and responsive behaviour on all key devices.",
-        "🚀 Launch & Support: Deploying, monitoring, iterating and staying in touch to keep the product evolving."
+      titleKey: 'about.process.title',
+      contentKeys: [
+        'about.process.1',
+        'about.process.2',
+        'about.process.3',
+        'about.process.4',
+        'about.process.5'
       ]
     }
-  };
+  } as const;
 
   return (
     <section id="about" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold gradient-text mb-6 font-cyber">
-            { '<ABOUT />' }
+            { t('about.title') }
           </h2>
           <p className="text-xl text-muted-foreground font-cyber">
-            Get to know the developer behind the code
+            { t('about.subtitle') }
           </p>
         </div>
 
@@ -64,20 +66,20 @@ const AboutSection = () => {
                 <div className="absolute inset-0 bg-gradient-primary opacity-20 animate-pulse"></div>
               </div>
               <h3 className="text-2xl font-bold text-foreground font-cyber mb-2">
-                Fullstack Developer
+                { t('about.role') }
               </h3>
               <p className="text-muted-foreground font-cyber">
-                Building fullstack digital products since 2020
+                { t('about.since') }
               </p>
             </div>
 
             {/* Quick Stats */ }
             <div className="grid grid-cols-2 gap-4">
               { [
-                { label: 'Years Experience', value: '5+', color: 'primary' },
-                { label: 'Projects Delivered', value: '100+', color: 'secondary' },
-                { label: 'Technologies', value: '25+', color: 'accent' },
-                { label: 'Client Rating', value: '5.0⭐', color: 'primary' }
+                { label: t('about.stat.years'), value: '5+', color: 'primary' },
+                { label: t('about.stat.projects'), value: '100+', color: 'secondary' },
+                { label: t('about.stat.tech'), value: '25+', color: 'accent' },
+                { label: t('about.stat.rating'), value: '5.0⭐', color: 'primary' }
               ].map((stat, index) => (
                 <div key={ index } className="card-interactive rounded-lg p-4 text-center">
                   <div className={ `text-2xl font-bold text-${stat.color} mb-1` }>
@@ -94,11 +96,11 @@ const AboutSection = () => {
             <div className="card-interactive rounded-lg p-6 bg-muted font-cyber">
               <div className="text-accent mb-3">$ whoami</div>
               <div className="text-sm space-y-1">
-                <div><span className="text-secondary">Name:</span> Fullstack Developer</div>
+                <div><span className="text-secondary">Name:</span> { t('about.role') }</div>
                 <div><span className="text-secondary">Location:</span> Digital Realm</div>
-                <div><span className="text-secondary">Status:</span> <span className="text-accent">Available for top-rated projects</span></div>
-                <div><span className="text-secondary">Favorite_tech:</span> React, Next.js, TypeScript, Node.js, Supabase, Firebase, MongoDB, AI</div>
-                <div><span className="text-secondary">Hobby:</span> Building cool stuff 🚀</div>
+                <div><span className="text-secondary">Status:</span> <span className="text-accent">{ t('about.whoami.status') }</span></div>
+                <div><span className="text-secondary">Favorite_tech:</span> { t('about.whoami.favorite') }</div>
+                <div><span className="text-secondary">Hobby:</span> { t('about.whoami.hobby') }</div>
               </div>
             </div>
           </div>
@@ -112,12 +114,12 @@ const AboutSection = () => {
                   key={ tab.id }
                   onClick={ () => setActiveTab(tab.id) }
                   className={ `px-4 py-2 rounded-lg font-cyber font-medium transition-all duration-300 ${activeTab === tab.id
-                      ? 'bg-primary text-primary-foreground shadow-neon'
-                      : 'bg-card text-card-foreground hover:bg-primary/20 border border-border'
+                    ? 'bg-primary text-primary-foreground shadow-neon'
+                    : 'bg-card text-card-foreground hover:bg-primary/20 border border-border'
                     }` }
                 >
                   <span className="mr-2">{ tab.icon }</span>
-                  { tab.label }
+                  { t(tab.labelKey) }
                 </button>
               )) }
             </div>
@@ -125,18 +127,18 @@ const AboutSection = () => {
             {/* Tab Content */ }
             <div className="card-interactive rounded-lg p-8 min-h-[400px]">
               <h3 className="text-2xl font-bold text-primary mb-6 font-cyber">
-                { tabContent[activeTab as keyof typeof tabContent].title }
+                { t(tabContent[activeTab as keyof typeof tabContent].titleKey) }
               </h3>
 
               <div className="space-y-4">
-                { tabContent[activeTab as keyof typeof tabContent].content.map((item, index) => (
+                { tabContent[activeTab as keyof typeof tabContent].contentKeys.map((key, index) => (
                   <div
                     key={ index }
                     className="flex items-start gap-3 text-foreground font-cyber leading-relaxed"
                     style={ { animationDelay: `${index * 0.1}s` } }
                   >
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <div>{ item }</div>
+                    <div>{ t(key) }</div>
                   </div>
                 )) }
               </div>
