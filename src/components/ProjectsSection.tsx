@@ -8,14 +8,14 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include real-time inventory, payment processing, and admin dashboard.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe", "Socket.io"],
-      category: "fullstack",
-      image: "🛒",
+      title: "Website Builder",
+      description: "Professional drag & drop CMS builder for creating landing pages and websites with blocks, live preview and code export.",
+      tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui"],
+      category: "frontend",
+      image: "🧩",
       status: "Live",
-      github: "#",
-      demo: "#"
+      github: "https://github.com/VOV44ER/website-builder",
+      demo: "https://website-builder-ten-delta.vercel.app/"
     },
     {
       title: "AI Dashboard",
@@ -99,8 +99,8 @@ const ProjectsSection = () => {
               key={ category.id }
               onClick={ () => setSelectedCategory(category.id) }
               className={ `px-6 py-3 rounded-lg font-cyber font-medium transition-all duration-300 ${selectedCategory === category.id
-                  ? 'bg-primary text-primary-foreground shadow-neon'
-                  : 'bg-card text-card-foreground hover:bg-primary/20 border border-border'
+                ? 'bg-primary text-primary-foreground shadow-neon'
+                : 'bg-card text-card-foreground hover:bg-primary/20 border border-border'
                 }` }
             >
               <span className="mr-2">{ category.icon }</span>
@@ -121,8 +121,8 @@ const ProjectsSection = () => {
               <div className="flex items-center justify-between mb-4">
                 <div className="text-4xl">{ project.image }</div>
                 <span className={ `px-3 py-1 rounded-full text-xs font-cyber font-medium ${project.status === 'Live'
-                    ? 'bg-accent/20 text-accent'
-                    : 'bg-secondary/20 text-secondary'
+                  ? 'bg-accent/20 text-accent'
+                  : 'bg-secondary/20 text-secondary'
                   }` }>
                   { project.status }
                 </span>

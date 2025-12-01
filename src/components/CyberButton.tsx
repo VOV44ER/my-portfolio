@@ -8,15 +8,15 @@ interface CyberButtonProps {
   href?: string;
 }
 
-const CyberButton = ({ 
-  children, 
-  onClick, 
-  variant = 'primary', 
+const CyberButton = ({
+  children,
+  onClick,
+  variant = 'primary',
   className = '',
-  href 
+  href
 }: CyberButtonProps) => {
   const baseClasses = 'btn-cyber font-cyber font-medium tracking-wider uppercase';
-  
+
   const variantClasses = {
     primary: 'border-primary text-primary hover:text-primary-foreground',
     secondary: 'border-secondary text-secondary hover:text-secondary-foreground',
@@ -26,16 +26,23 @@ const CyberButton = ({
   const buttonClasses = `${baseClasses} ${variantClasses[variant]} ${className}`;
 
   if (href) {
+    const isExternal = href.startsWith('http');
     return (
-      <a href={href} className={buttonClasses}>
-        {children}
+      <a
+        href={ href }
+        className={ buttonClasses }
+        { ...(isExternal
+          ? { target: '_blank', rel: 'noopener noreferrer' }
+          : {}) }
+      >
+        { children }
       </a>
     );
   }
 
   return (
-    <button onClick={onClick} className={buttonClasses}>
-      {children}
+    <button onClick={ onClick } className={ buttonClasses }>
+      { children }
     </button>
   );
 };
