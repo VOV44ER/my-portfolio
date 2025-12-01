@@ -9,7 +9,7 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "Website Builder",
-      description: "Professional drag & drop CMS builder for creating landing pages and websites with blocks, live preview and code export.",
+      description: "Professional drag & drop CMS builder for creating landing pages and multi‑page websites with reusable blocks, live preview, and production‑ready code export.",
       tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui"],
       category: "frontend",
       image: "🧩",
@@ -18,14 +18,15 @@ const ProjectsSection = () => {
       demo: "https://website-builder-ten-delta.vercel.app/"
     },
     {
-      title: "AI Dashboard",
-      description: "Modern dashboard for AI model management with real-time metrics, data visualization, and model deployment tools.",
-      tech: ["Next.js", "TypeScript", "Tailwind", "Chart.js", "Python"],
+      title: "Delphos AI Music Platform",
+      description: "Frontend for an AI music platform inspired by Delphos: create \"soundworlds\", generate beats and stems, and control workflows for musicians, labels and platforms in one dashboard.",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "React", "REST APIs"],
       category: "frontend",
-      image: "🤖",
-      status: "In Progress",
-      github: "#",
-      demo: "#"
+      image: "🎧",
+      status: "Live",
+      github: "",
+      note: "Client project under NDA – repository is private.",
+      demo: "https://www.delphos.ai/"
     },
     {
       title: "Crypto Tracker",
@@ -137,6 +138,12 @@ const ProjectsSection = () => {
                 { project.description }
               </p>
 
+              { project.note && (
+                <p className="text-xs text-muted-foreground font-cyber mb-4 italic">
+                  { project.note }
+                </p>
+              ) }
+
               {/* Tech Stack */ }
               <div className="flex flex-wrap gap-2 mb-6">
                 { project.tech.map((tech, techIndex) => (
@@ -151,13 +158,15 @@ const ProjectsSection = () => {
 
               {/* Project Links */ }
               <div className="flex gap-3 mt-auto">
-                <CyberButton
-                  variant="primary"
-                  href={ project.github }
-                  className="flex-1 text-center text-xs py-2"
-                >
-                  { t('projects.btn.code') }
-                </CyberButton>
+                { project.github && (
+                  <CyberButton
+                    variant="primary"
+                    href={ project.github }
+                    className="flex-1 text-center text-xs py-2"
+                  >
+                    { t('projects.btn.code') }
+                  </CyberButton>
+                ) }
                 <CyberButton
                   variant="secondary"
                   href={ project.demo }
