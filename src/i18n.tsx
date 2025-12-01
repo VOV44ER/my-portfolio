@@ -167,6 +167,14 @@ const translations: Translations = {
     "projects.filter.backend": { en: "Backend", uk: "Бекенд" },
     "projects.btn.code": { en: "Code", uk: "Код" },
     "projects.btn.demo": { en: "Live Demo", uk: "Демо" },
+    "projects.badge.nda": {
+        en: "NDA project",
+        uk: "NDA‑проєкт",
+    },
+    "projects.badge.nda.tooltip": {
+        en: "Repository is private",
+        uk: "Репозиторій приватний",
+    },
 
     // Contact
     "contact.title": { en: "<CONTACT />", uk: "<КОНТАКТИ />" },

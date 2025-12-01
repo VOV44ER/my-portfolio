@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CyberButton from './CyberButton';
 import { useI18n } from '@/i18n';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
 const ProjectsSection = () => {
   const { t } = useI18n();
@@ -25,8 +26,19 @@ const ProjectsSection = () => {
       image: "🎧",
       status: "Live",
       github: "",
-      note: "Client project under NDA – repository is private.",
+      nda: true,
       demo: "https://www.delphos.ai/"
+    },
+    {
+      title: "MoveShop24 – Moving Services Marketplace",
+      description: "Fullstack marketplace for moving services: customers describe their relocation needs, the platform scores requests and routes them to vetted partners, who respond with tailored offers.",
+      tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase"],
+      category: "fullstack",
+      image: "🛒",
+      status: "Live",
+      github: "",
+      nda: true,
+      demo: "https://www.moveshop24.com/"
     },
     {
       title: "Crypto Tracker",
@@ -138,12 +150,6 @@ const ProjectsSection = () => {
                 { project.description }
               </p>
 
-              { project.note && (
-                <p className="text-xs text-muted-foreground font-cyber mb-4 italic">
-                  { project.note }
-                </p>
-              ) }
-
               {/* Tech Stack */ }
               <div className="flex flex-wrap gap-2 mb-6">
                 { project.tech.map((tech, techIndex) => (
@@ -158,7 +164,7 @@ const ProjectsSection = () => {
 
               {/* Project Links */ }
               <div className="flex gap-3 mt-auto">
-                { project.github && (
+                { project.github ? (
                   <CyberButton
                     variant="primary"
                     href={ project.github }
@@ -166,7 +172,20 @@ const ProjectsSection = () => {
                   >
                     { t('projects.btn.code') }
                   </CyberButton>
-                ) }
+                ) : project.nda ? (
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <div className="flex-1 text-center text-xs py-2 border border-border rounded-lg font-cyber text-muted-foreground bg-muted/40 cursor-default">
+                        { t('projects.badge.nda') }
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <span className="font-cyber text-xs">
+                        { t('projects.badge.nda.tooltip') }
+                      </span>
+                    </TooltipContent>
+                  </Tooltip>
+                ) : null }
                 <CyberButton
                   variant="secondary"
                   href={ project.demo }
