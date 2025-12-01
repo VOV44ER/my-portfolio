@@ -30,6 +30,17 @@ const ProjectsSection = () => {
       demo: "https://www.delphos.ai/"
     },
     {
+      title: "Hirenest Pre‑Employment Assessment Platform",
+      description: "Frontend platform for pre-employment assessments that lets employers browse and configure tests, build role-specific assessment flows, manage a rich test library, and track candidate results in a single dashboard.",
+      tech: ["React", "TypeScript", "Redux + Redux‑Saga", "Tailwind CSS", "i18next", "Stripe", "Jest / React Testing Library"],
+      category: "frontend",
+      image: "🧠",
+      status: "Live",
+      github: "",
+      nda: true,
+      demo: "https://hirenest.com/"
+    },
+    {
       title: "MoveShop24 – Moving Services Marketplace",
       description: "Fullstack platform for moving services: customers describe their relocation needs, the system scores and structures requests, then routes them to vetted moving partners who respond with tailored, trackable offers.",
       tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
