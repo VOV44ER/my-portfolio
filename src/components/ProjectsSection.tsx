@@ -20,8 +20,8 @@ const ProjectsSection = () => {
     },
     {
       title: "Delphos AI Music Platform",
-      description: "Frontend for an AI music platform inspired by Delphos: create \"soundworlds\", generate beats and stems, and control workflows for musicians, labels and platforms in one dashboard.",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "React", "REST APIs"],
+      description: "Frontend for an AI music copilot that lets you build custom “soundworlds”, generate full tracks and stems from chord progressions, and manage projects for artists, labels and platforms in a single dashboard.",
+      tech: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Auth0", "REST APIs", "Wavesurfer.js / Web Audio"],
       category: "frontend",
       image: "🎧",
       status: "Live",
@@ -31,8 +31,8 @@ const ProjectsSection = () => {
     },
     {
       title: "MoveShop24 – Moving Services Marketplace",
-      description: "Fullstack marketplace for moving services: customers describe their relocation needs, the platform scores requests and routes them to vetted partners, who respond with tailored offers.",
-      tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase"],
+      description: "Fullstack platform for moving services: customers describe their relocation needs, the system scores and structures requests, then routes them to vetted moving partners who respond with tailored, trackable offers.",
+      tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
       category: "fullstack",
       image: "🛒",
       status: "Live",
