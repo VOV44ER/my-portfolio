@@ -52,44 +52,15 @@ const ProjectsSection = () => {
       demo: "https://www.moveshop24.com/"
     },
     {
-      title: "Crypto Tracker",
-      description: "Real-time cryptocurrency tracking app with portfolio management, price alerts, and market analysis features.",
-      tech: ["Vue.js", "Express", "WebSocket", "Chart.js", "Redis"],
-      category: "fullstack",
-      image: "₿",
-      status: "Live",
-      github: "#",
-      demo: "#"
-    },
-    {
-      title: "Design System",
-      description: "Comprehensive design system with reusable components, theme management, and documentation for enterprise applications.",
-      tech: ["React", "Storybook", "SASS", "TypeScript", "Figma"],
+      title: "KATALIZATORY AUTO UA — Catalyst Buyback Platform",
+      description: "Frontend for a platform that buys and purchases automotive catalysts and diesel particulate filters (DPF) across Ukraine. Features bilingual support (UA/RU), Telegram Bot API integration for lead processing, and comprehensive SEO optimization.",
+      tech: ["Next.js 14", "React 18", "TypeScript", "Tailwind CSS", "shadcn/ui", "Telegram Bot API", "React Input Mask", "Schema.org"],
       category: "frontend",
-      image: "🎨",
+      image: "🚗",
       status: "Live",
-      github: "#",
-      demo: "#"
-    },
-    {
-      title: "Task Management API",
-      description: "RESTful API for task management with authentication, real-time updates, and advanced filtering capabilities.",
-      tech: ["Node.js", "Express", "PostgreSQL", "JWT", "Socket.io"],
-      category: "backend",
-      image: "📋",
-      status: "Live",
-      github: "#",
-      demo: "#"
-    },
-    {
-      title: "Portfolio Website",
-      description: "This cyberpunk-themed portfolio website you're currently viewing! Built with modern technologies and cool animations.",
-      tech: ["React", "TypeScript", "Tailwind", "Framer Motion", "Vite"],
-      category: "frontend",
-      image: "🚀",
-      status: "Live",
-      github: "#",
-      demo: "#"
+      github: "",
+      nda: true,
+      demo: "https://katalizatory-auto.com/"
     }
   ];
 
