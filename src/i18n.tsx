@@ -33,8 +33,8 @@ const translations: Translations = {
         uk: "Познайомтесь із розробником, який стоїть за цим кодом",
     },
     "about.role": {
-        en: "Fullstack Developer",
-        uk: "Fullstack-розробник",
+        en: "Frontend Developer @ Freelancing via Upwork",
+        uk: "Frontend-розробник @ Фріланс через Upwork",
     },
     "about.since": {
         en: "Building fullstack digital products since 2020",
@@ -52,6 +52,14 @@ const translations: Translations = {
         en: "Technologies",
         uk: "Технологій",
     },
+    "about.stat.repos": {
+        en: "GitHub Repos",
+        uk: "Репозиторіїв",
+    },
+    "about.stat.achievement": {
+        en: "Pull Shark",
+        uk: "Pull Shark",
+    },
     "about.stat.rating": {
         en: "Client Rating",
         uk: "Рейтинг клієнтів",
@@ -61,8 +69,8 @@ const translations: Translations = {
         uk: "Відкритий до крутих проєктів",
     },
     "about.whoami.favorite": {
-        en: "React, Next.js, TypeScript, Node.js, Supabase, Firebase, MongoDB, AI",
-        uk: "React, Next.js, TypeScript, Node.js, Supabase, Firebase, MongoDB, AI",
+        en: "React, Redux, Next.js, Gatsby, TypeScript, Material UI",
+        uk: "React, Redux, Next.js, Gatsby, TypeScript, Material UI",
     },
     "about.whoami.hobby": {
         en: "Building cool stuff 🚀",
@@ -203,7 +211,7 @@ const translations: Translations = {
         uk: "Email або LinkedIn",
     },
     "contact.status.timezone": { en: "Time Zone:", uk: "Часовий пояс:" },
-    "contact.status.timezone.value": { en: "GMT+0", uk: "GMT+0" },
+    "contact.status.timezone.value": { en: "EET (UTC+2)", uk: "EET (UTC+2)" },
 
     "contact.form.name": { en: "Name *", uk: "Імʼя *" },
     "contact.form.email": { en: "Email *", uk: "Email *" },
@@ -252,12 +260,12 @@ const translations: Translations = {
         uk: "Час відповіді: 24 години",
     },
     "footer.status.location": {
-        en: "Location: Digital Realm",
-        uk: "Локація: Digital Realm",
+        en: "Location: Ukraine, Kyiv",
+        uk: "Локація: Україна, Київ",
     },
     "footer.brand.text": {
-        en: "Frontend Developer passionate about creating amazing digital experiences. Always learning, always building, always improving.",
-        uk: "Frontend‑розробник, який обожнює створювати сильні цифрові досвіди. Завжди вчуся, будую та вдосконалюю те, що роблю.",
+        en: "Frontend React-Redux Developer from Ukraine. Freelancing via Upwork, building modern web applications with passion and precision.",
+        uk: "Frontend React-Redux розробник з України. Працюю через Upwork, створюю сучасні веб‑додатки з натхненням та точністю.",
     },
     "footer.terminal.command": {
         en: '$ echo "Thanks for visiting my portfolio!"',

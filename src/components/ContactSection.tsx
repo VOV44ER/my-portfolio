@@ -35,32 +35,25 @@ const ContactSection = () => {
 
   const contactMethods = [
     {
-      icon: '📧',
-      label: 'Email',
-      value: 'hello@developer.dev',
-      href: 'mailto:hello@developer.dev',
+      icon: '💼',
+      label: 'Upwork',
+      value: 'Freelancer Profile',
+      href: 'https://www.upwork.com/freelancers/~01199c1e86f23068ea',
       color: 'primary'
     },
     {
       icon: '💬',
       label: 'LinkedIn',
-      value: '/in/frontend-dev',
-      href: 'https://linkedin.com',
+      value: '/in/alputov-vova',
+      href: 'https://www.linkedin.com/in/alputov-vova/',
       color: 'secondary'
     },
     {
       icon: '🐙',
       label: 'GitHub',
-      value: '@frontend-dev',
-      href: 'https://github.com',
+      value: '@VOV44ER',
+      href: 'https://github.com/VOV44ER',
       color: 'accent'
-    },
-    {
-      icon: '🐦',
-      label: 'Twitter',
-      value: '@frontend_dev',
-      href: 'https://twitter.com',
-      color: 'primary'
     }
   ];
 

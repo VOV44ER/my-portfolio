@@ -78,8 +78,8 @@ const AboutSection = () => {
               { [
                 { label: t('about.stat.years'), value: '5+', color: 'primary' },
                 { label: t('about.stat.projects'), value: '100+', color: 'secondary' },
-                { label: t('about.stat.tech'), value: '25+', color: 'accent' },
-                { label: t('about.stat.rating'), value: '5.0⭐', color: 'primary' }
+                { label: t('about.stat.repos'), value: '96', color: 'accent' },
+                { label: t('about.stat.achievement'), value: '🏆 Top 3%', color: 'primary' }
               ].map((stat, index) => (
                 <div key={ index } className="card-interactive rounded-lg p-4 text-center">
                   <div className={ `text-2xl font-bold text-${stat.color} mb-1` }>
@@ -96,8 +96,9 @@ const AboutSection = () => {
             <div className="card-interactive rounded-lg p-6 bg-muted font-cyber">
               <div className="text-accent mb-3">$ whoami</div>
               <div className="text-sm space-y-1">
-                <div><span className="text-secondary">Name:</span> { t('about.role') }</div>
-                <div><span className="text-secondary">Location:</span> Digital Realm</div>
+                <div><span className="text-secondary">Name:</span> Vova</div>
+                <div><span className="text-secondary">Location:</span> Ukraine, Kyiv</div>
+                <div><span className="text-secondary">Role:</span> { t('about.role') }</div>
                 <div><span className="text-secondary">Status:</span> <span className="text-accent">{ t('about.whoami.status') }</span></div>
                 <div><span className="text-secondary">Favorite_tech:</span> { t('about.whoami.favorite') }</div>
                 <div><span className="text-secondary">Hobby:</span> { t('about.whoami.hobby') }</div>
@@ -150,9 +151,11 @@ const AboutSection = () => {
               <div className="text-sm">
                 <div className="text-accent">const developer = { '{' }</div>
                 <div className="ml-4 space-y-1">
-                  <div><span className="text-secondary">passion</span>: <span className="text-primary">'Shipping fullstack products that feel fast and intuitive'</span>,</div>
+                  <div><span className="text-secondary">name</span>: <span className="text-primary">'Vova'</span>,</div>
+                  <div><span className="text-secondary">location</span>: <span className="text-primary">'Ukraine, Kyiv'</span>,</div>
+                  <div><span className="text-secondary">passion</span>: <span className="text-primary">'Building modern React-Redux applications'</span>,</div>
                   <div><span className="text-secondary">mindset</span>: <span className="text-primary">'Always learning, always improving'</span>,</div>
-                  <div><span className="text-secondary">goal</span>: <span className="text-primary">'Help businesses grow through clean, modern web apps'</span></div>
+                  <div><span className="text-secondary">github</span>: <span className="text-primary">'@VOV44ER'</span></div>
                 </div>
                 <div className="text-accent">{ '};' }</div>
               </div>

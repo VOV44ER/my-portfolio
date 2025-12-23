@@ -61,6 +61,17 @@ const ProjectsSection = () => {
       github: "",
       nda: true,
       demo: "https://katalizatory-auto.com/"
+    },
+    {
+      title: "Summer Sunshine Ukraine - Eco Holiday Children's Camp",
+      description: "Corporate website for a children's summer camp in the Carpathians. Features camp shift booking, parent reviews, photo gallery, and news. Includes Telegram Bot API integration for booking applications, comprehensive SEO optimization with Schema.org markup, and SSR/SSG for performance.",
+      tech: ["Next.js 15", "React 18", "TypeScript", "Tailwind CSS", "shadcn/ui", "Telegram Bot API", "React Hook Form", "Zod", "Schema.org", "Vercel Analytics"],
+      category: "frontend",
+      image: "🌲",
+      status: "Live",
+      github: "",
+      nda: true,
+      demo: "https://www.ecoholiday.com.ua/"
     }
   ];
 

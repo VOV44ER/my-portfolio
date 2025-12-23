@@ -5,10 +5,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: 'GitHub', icon: '🐙', href: 'https://github.com' },
-    { name: 'LinkedIn', icon: '💼', href: 'https://linkedin.com' },
-    { name: 'Twitter', icon: '🐦', href: 'https://twitter.com' },
-    { name: 'Email', icon: '📧', href: 'mailto:hello@developer.dev' }
+    { name: 'Upwork', icon: '💼', href: 'https://www.upwork.com/freelancers/~01199c1e86f23068ea' },
+    { name: 'LinkedIn', icon: '💬', href: 'https://www.linkedin.com/in/alputov-vova/' },
+    { name: 'GitHub', icon: '🐙', href: 'https://github.com/VOV44ER' }
   ];
 
   const quickLinks = [

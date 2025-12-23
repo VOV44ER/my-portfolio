@@ -10,9 +10,12 @@ const SkillsSection = () => {
       title: "Frontend & UI",
       skills: [
         { name: "React", level: 100, icon: "⚛️" },
+        { name: "Redux", level: 100, icon: "🔄" },
         { name: "Next.js", level: 100, icon: "▲" },
+        { name: "Gatsby", level: 100, icon: "⚡" },
         { name: "TypeScript", level: 100, icon: "📘" },
-        { name: "Tailwind CSS", level: 100, icon: "🎨" },
+        { name: "Material UI", level: 100, icon: "🎨" },
+        { name: "Tailwind CSS", level: 100, icon: "💨" },
         { name: "Shadcn UI", level: 100, icon: "💠" },
         { name: "Responsive Design", level: 100, icon: "📱" }
       ]
@@ -110,7 +113,7 @@ const SkillsSection = () => {
               <span className="text-secondary">"passion"</span>: <span className="text-primary">"Fullstack products that feel fast, clean and intuitive"</span>,
             </div>
             <div className="ml-4">
-              <span className="text-secondary">"focus"</span>: <span className="text-primary">"React, Next.js, TypeScript, Node.js, Supabase, Firebase, MongoDB"</span>,
+              <span className="text-secondary">"focus"</span>: <span className="text-primary">"React, Redux, Next.js, Gatsby, TypeScript, Material UI, Node.js, Supabase, Firebase, MongoDB"</span>,
             </div>
             <div className="ml-4">
               <span className="text-secondary">"motto"</span>: <span className="text-primary">"Always learning, always improving"</span>
